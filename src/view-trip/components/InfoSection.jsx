@@ -118,7 +118,7 @@ function InfoSection({ trip }) {
           </span>
           <span className="bg-gray-200 font-medium text-gray-600 rounded-full py-1 px-4 text-sm md:text-base inline-flex items-center gap-2">
             <span>👩‍👧‍👦</span>
-            <span>Travelers: {trip?.userSelection?.traveler || 'N/A'}</span>
+            <span>Travellers: {trip?.userSelection?.traveler || 'N/A'}</span>
           </span>
           <span className="bg-gray-200 font-medium text-gray-600 rounded-full py-1 px-4 text-sm md:text-base inline-flex items-center gap-2">
             <span>💵</span>

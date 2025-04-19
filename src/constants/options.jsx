@@ -23,7 +23,7 @@ export const SelectTravelList=[
     {
         id:1,
         title:'Just Me',
-        desc:"A sole traveller",
+        desc:"A solo traveller",
         icon:'🙋‍♀️',
         people:'1',
     },

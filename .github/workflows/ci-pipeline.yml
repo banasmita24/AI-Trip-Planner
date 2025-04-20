@@ -13,20 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    # Checkout the repository
     - name: Checkout code
       uses: actions/checkout@v2
       
-    # Set up Node.js (replace version with your Node version)
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '20.13.1'  
+        node-version: '20.13.1' 
     
-    # Install dependencies
     - name: Install dependencies
       run: npm install
     
-    # Run tests (replace with your test command if needed)
-    - name: Run tests
-      run: npm run dev
+    - name: Run build
+      run: npm run build

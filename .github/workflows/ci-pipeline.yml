@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI Workflow
 
 on:
   push:
@@ -9,27 +9,24 @@ on:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-
+    
     steps:
+    # Checkout the repository
     - name: Checkout code
-      uses: actions/checkout@v3
-
+      uses: actions/checkout@v2
+      
+    # Set up Node.js (replace version with your Node version)
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v2
       with:
-        node-version: '16' 
-
+        node-version: '20.13.1'  
+    
+    # Install dependencies
     - name: Install dependencies
       run: npm install
-
+    
+    # Run tests (replace with your test command if needed)
     - name: Run tests
-      run: npm test # or your specific test command
-
-    - name: Build project
-      run: npm run build 
-
-    - name: Deploy (optional)
-      run: |
-        echo "Deploying your app..." 
+      run: npm run dev

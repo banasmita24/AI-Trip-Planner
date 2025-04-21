@@ -1,0 +1,62 @@
+# Deployment for the AI-Trip-Planner application
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-trip-planner
+  labels:
+    app: ai-trip-planner
+spec:
+  replicas: 2 # Number of application instances
+  selector:
+    matchLabels:
+      app: ai-trip-planner
+  template:
+    metadata:
+      labels:
+        app: ai-trip-planner
+    spec:
+      containers:
+      - name: ai-trip-planner
+        image: banasmita24/ai-trip-planner:latest # Replace with your Docker image tag
+        ports:
+        - containerPort: 3000 # The port your app listens on
+        envFrom:
+        - configMapRef:
+            name: ai-trip-env # Reference environment variables from ConfigMap
+        volumeMounts:
+        - name: env-volume
+          mountPath: "/app/.env.local" # Mount the .env.local file
+          subPath: .env.local
+      volumes:
+      - name: env-volume
+        configMap:
+          name: ai-trip-env # Reference the ConfigMap for mounted environment file
+
+---
+# ConfigMap to store the environment variables
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ai-trip-env
+data:
+  .env.local: |-
+    # Add your environment variables here (as key-value pairs)
+    VITE_GOOGLE_PLACE_API_KEY=AIzaSyCdXwo_Px2q1AqcveBpAeVF27xOwpHWcuw
+    VITE_GOOGLE_GEMINI_AI_API_KEY=AIzaSyBgWGZtwy0KK9lwEREZcIqxoQntzD-niUw
+    VITE_GOOGLE_AUTH_CLIENT_ID=626278018661-hf5ib1m4m3pdqhn7je8vlok73993hcdd.apps.googleusercontent.com
+
+---
+# Service to expose the application
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-trip-planner
+spec:
+  selector:
+    app: ai-trip-planner
+  ports:
+  - protocol: TCP
+    port: 80       # Exposed service port
+    targetPort: 3000
+    nodePort: 31000
+  type: NodePort

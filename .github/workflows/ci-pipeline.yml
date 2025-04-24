@@ -27,5 +27,5 @@ jobs:
     - name: Run build
       run: npm run build
 
-    - name: Run Jest tests
+    - name: Run Vite tests
       run: npm test

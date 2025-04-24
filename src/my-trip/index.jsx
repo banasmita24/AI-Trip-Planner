@@ -1,11 +1,19 @@
 import { db } from '@/service/firebaseConfig';
 import React, { useEffect, useState } from 'react';
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom'; 
+=======
+import { useNavigate } from 'react-router-dom'; // Fixed useNavigation to useNavigate
+>>>>>>> 1fb3343129f3fa7ca5598456090cf5ef24053e61
 import { collection, query, where, getDocs } from "firebase/firestore";
 import UserTripCard from './components/UserTripCard';
 
 function MyTrips() {
+<<<<<<< HEAD
   const navigate = useNavigate(); 
+=======
+  const navigate = useNavigate(); // Fixed to useNavigate hook
+>>>>>>> 1fb3343129f3fa7ca5598456090cf5ef24053e61
   const [userTrips, setUserTrips] = useState([]);
 
   useEffect(() => {

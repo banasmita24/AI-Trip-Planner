@@ -23,7 +23,11 @@ export const SelectTravelList=[
     {
         id:1,
         title:'Just Me',
+<<<<<<< HEAD
         desc:"A sole traveller",
+=======
+        desc:"A solo traveller",
+>>>>>>> 1fb3343129f3fa7ca5598456090cf5ef24053e61
         icon:'🙋‍♀️',
         people:'1',
     },
@@ -51,4 +55,8 @@ export const SelectTravelList=[
 ]
 
 
+<<<<<<< HEAD
 export const AI_PROMPT='Generate Travel Plan for Location : {location} for {totalDays} Days for {traveler} with a {budget} budget, Give me a Hotels options list with HotelName,Hotel address,Price, hotel image url,geo coordinates,rating,descriptions and suggest itinerary with placeName,Place Details,Place Image Url, Geo Coordinates,ticket Pricing,rating,Time travel each of the location for 3 days with each day plan with best time to visit in JSON format.'
+=======
+export const AI_PROMPT='Generate Travel Plan for Location : {location} for {totalDays} Days for {traveler} with a {budget} budget, Give me a Hotels options list with HotelName,Hotel address,Price, hotel image url,geo coordinates,rating,descriptions and suggest itinerary with placeName,Place Details,Place Image Url, Geo Coordinates,ticket Pricing,rating,Time travel each of the location for 3 days with each day plan with best time to visit in JSON format.'
+>>>>>>> 1fb3343129f3fa7ca5598456090cf5ef24053e61

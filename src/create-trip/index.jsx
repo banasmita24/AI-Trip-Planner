@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
 import { Input } from '../components/ui/input';
 import { AI_PROMPT, SelectBudgetOptions, SelectTravelList } from '../constants/options';
-import { Button } from "@/components/ui/button"
+import { Button } from "../components/ui/button";
+
 import { toast } from 'sonner';
 import { chatSession } from '../service/AiModel';
 import { FcGoogle } from "react-icons/fc";
@@ -13,11 +14,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "../components/ui/dialog"
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "@/service/firebaseConfig"
+import { db } from "../service/firebaseConfig"
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useNavigate } from "react-router-dom"
 

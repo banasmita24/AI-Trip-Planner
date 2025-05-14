@@ -2,12 +2,7 @@ import React, { useEffect, useState } from 'react'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
 import { Input } from '../components/ui/input';
 import { AI_PROMPT, SelectBudgetOptions, SelectTravelList } from '../constants/options';
-<<<<<<< HEAD
-import { Button } from "../components/ui/button";
-
-=======
 import { Button } from "@/components/ui/button"
->>>>>>> 1fb3343129f3fa7ca5598456090cf5ef24053e61
 import { toast } from 'sonner';
 import { chatSession } from '../service/AiModel';
 import { FcGoogle } from "react-icons/fc";
@@ -18,19 +13,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-<<<<<<< HEAD
-} from "../components/ui/dialog"
-import { useGoogleLogin } from '@react-oauth/google';
-import axios from 'axios';
-import { doc, setDoc } from "firebase/firestore";
-import { db } from "../service/firebaseConfig"
-=======
 } from "@/components/ui/dialog"
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/service/firebaseConfig"
->>>>>>> 1fb3343129f3fa7ca5598456090cf5ef24053e61
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useNavigate } from "react-router-dom"
 
@@ -70,7 +57,7 @@ function CreateTrip() {
     }
 
     if (formData?.totalDays > 5) {
-      toast("Trip can’t exceed 4 days!");
+      toast("Trip can’t exceed 5 days!");
       return;
     }
 
@@ -123,13 +110,8 @@ function CreateTrip() {
     <div className="px-5 mt-10 sm:px-10 md:px-32 lg:px-56 xl:px-72">
 
       <div>
-<<<<<<< HEAD
         <h2 className="font-bold text-3xl ">Tell us your travel preferences 🌍✈️🌴</h2>
         <p className="mt-3 text-gray-600 text-xl">Just provide some basic information,and our trip planner will generate a customized itinerary based on your preferences.</p>
-=======
-        <h2 className="font-bold text-3xl ">Adventure calls! What’s your travel style? 🌍✈️🌴</h2>
-        <p className="mt-3 text-gray-600 text-xl">It only takes a moment to share your travel interests. We’ll turn them into your dream itinerary.</p>
->>>>>>> 1fb3343129f3fa7ca5598456090cf5ef24053e61
       </div>
 
       <div className="mt-20 flex flex-col gap-9">
@@ -214,8 +196,4 @@ function CreateTrip() {
     </div>
   )
 }
-<<<<<<< HEAD
 export default CreateTrip
-=======
-export default CreateTrip
->>>>>>> 1fb3343129f3fa7ca5598456090cf5ef24053e61

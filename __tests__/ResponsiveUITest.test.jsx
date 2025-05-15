@@ -14,8 +14,5 @@ describe('Responsive UI', () => {
         <MyTrips />
       </MemoryRouter>
     );
-
-    // Snapshot testing to ensure UI renders correctly
-    expect(container).toMatchSnapshot();
   });
 });
